@@ -17,8 +17,13 @@ function swap(array, a, b) {
 
 const swapes6 = (array, a, b) => [array[a], array[b]] = [array[b], array[a]];
 
+function reverseCompare(compareFn) {
+  return (a, b) => compareFn(b, a);
+}
+
 module.exports = {
   Compare,
   defaultCompare,
-  swap
+  swap,
+  reverseCompare
 }

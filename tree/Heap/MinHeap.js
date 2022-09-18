@@ -5,7 +5,7 @@ class MinHeap {
   // heap: Array<number>
   constructor(compareFn = defaultCompare) {
     this.compareFn = compareFn; // {1}
-    this.heap = [2,3,4,5]; // {2}
+    this.heap = []; // {2}
   }
   getLeftIndex(index) {
     return 2 * index + 1;
@@ -17,10 +17,12 @@ class MinHeap {
     if (index === 0) {
       return undefined;
     }
+    // return Math.ceil(index / 2) - 1;
     return Math.floor((index -1) / 2);
   }
   insert(value) {
-    if (value !== null) {
+    if (value) {
+      debugger
       this.heap.push(value); // {1}
       this.siftUp(this.heap.length -1); // {2}
       return true;
